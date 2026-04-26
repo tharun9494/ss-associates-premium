@@ -6,13 +6,10 @@ const Footer = () => {
     <footer className="bg-white border-t-2 border-brand-red">
       <div className="container py-16 grid md:grid-cols-3 gap-12">
         <div>
-          <div className="flex items-center gap-3 mb-5">
-            <img src={logo} alt="S.S. Associates" width={48} height={48} className="w-12 h-12 object-contain" />
-            <div>
-              <div className="font-display font-bold text-lg leading-none">S.S. Associates</div>
-              <div className="text-[8px] uppercase tracking-[0.25em] text-brand-red mt-1 font-medium">
-                Architects · Planners · Engineers · Valuers
-              </div>
+          <div className="mb-5">
+            <img src={logo} alt="S.S. Associates" className="h-16 w-auto object-contain mb-3" />
+            <div className="text-[8px] uppercase tracking-[0.25em] text-brand-red font-medium">
+              Architects · Planners · Engineers · Valuers
             </div>
           </div>
           <p className="text-xs text-brand-muted leading-relaxed max-w-xs">
