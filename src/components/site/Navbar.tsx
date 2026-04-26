@@ -32,13 +32,13 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <button onClick={() => handleClick("Home")} className="flex items-center gap-3 group">
-          <img src={logo} alt="S.S. Associates" width={48} height={48} className="w-12 h-12 object-contain" />
-          <div className="hidden sm:block text-left">
-            <div className="font-display text-lg font-bold leading-none text-brand-black">
-              S.S. Associates
+          <img src={logo} alt="S.S. Associates" className="h-14 w-auto object-contain" />
+          <div className="hidden sm:block text-left border-l border-brand-border pl-3">
+            <div className="text-[8px] uppercase tracking-[0.25em] text-brand-red font-medium">
+              Architects · Planners
             </div>
-            <div className="text-[8px] uppercase tracking-[0.25em] text-brand-red mt-1 font-medium">
-              Architects · Planners · Engineers · Valuers
+            <div className="text-[8px] uppercase tracking-[0.25em] text-brand-black mt-1 font-medium">
+              Engineers · Valuers
             </div>
           </div>
         </button>
