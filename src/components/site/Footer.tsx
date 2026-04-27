@@ -1,5 +1,13 @@
 import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+
+const quickLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Work", path: "/work" },
+  { name: "Contact", path: "/contact" },
+];
 
 const Footer = () => {
   return (
@@ -7,7 +15,9 @@ const Footer = () => {
       <div className="container py-16 grid md:grid-cols-3 gap-12">
         <div>
           <div className="mb-5">
-            <img src={logo} alt="S.S. Associates" className="h-16 w-auto object-contain mb-3" />
+            <Link to="/">
+              <img src={logo} alt="S.S. Associates" className="h-16 w-auto object-contain mb-3" />
+            </Link>
             <div className="text-[8px] uppercase tracking-[0.25em] text-brand-red font-medium">
               Architects · Planners · Engineers · Valuers
             </div>
@@ -19,8 +29,8 @@ const Footer = () => {
           <div className="flex gap-3 mt-6">
             {[
               { icon: MessageCircle, href: "https://wa.me/919542630670", label: "WhatsApp" },
-              { icon: Instagram, href: "#", label: "Instagram" },
-              { icon: MapPin, href: "https://maps.google.com/?q=Kamalanagar+Anantapur", label: "Maps" },
+              { icon: Instagram, href: "https://www.instagram.com/ssa_associates/", label: "Instagram" },
+              { icon: MapPin, href: "https://www.google.com/maps/place/S.S.Associates+-+Architects+.+planners.+Structural+Engineers+.+Valuers/@14.6808673,77.600965,17.72z/data=!4m12!1m5!3m4!2zMTTCsDQwJzUwLjUiTiA3N8KwMzYnMTAuMSJF!8m2!3d14.680692!4d77.602814!3m5!1s0x3bb14b652f035431:0x75f338121ec20bc8!8m2!3d14.6810097!4d77.6027341!16s%2Fg%2F11tdmbwrkl?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D", label: "Maps" },
             ].map((s) => (
               <a
                 key={s.label}
@@ -41,11 +51,11 @@ const Footer = () => {
             Quick Links
           </h4>
           <ul className="space-y-3">
-            {["Home", "About", "Services", "Projects", "Gallery", "Contact"].map((l) => (
-              <li key={l}>
-                <a href={`#${l.toLowerCase()}`} className="text-sm text-brand-black hover:text-brand-red transition-colors">
-                  {l}
-                </a>
+            {quickLinks.map((l) => (
+              <li key={l.name}>
+                <Link to={l.path} className="text-sm text-brand-black hover:text-brand-red transition-colors">
+                  {l.name}
+                </Link>
               </li>
             ))}
           </ul>
